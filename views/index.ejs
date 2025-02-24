@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Management</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Contact Management System</h1>
+    <a href="/add">Add New Contact</a>
+    <ul>
+        <% contacts.forEach(contact => { %>
+            <li>
+                <strong><%= contact.name %></strong> - <%= contact.phone %> - <%= contact.email %>
+                <a href="/edit/<%= contact.id %>">Edit</a>
+                <a href="/delete/<%= contact.id %>">Delete</a>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>
